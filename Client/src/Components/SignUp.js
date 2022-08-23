@@ -12,8 +12,6 @@ const SignUp = () => {
   const postData = async (e) => {
     e.preventDefault();
 
-    // const { user_name, email, password } = user;
-
     const res = await fetch("http://localhost:3080/auth/register", {
       method: "POST",
       headers: {
@@ -27,9 +25,10 @@ const SignUp = () => {
     });
 
     const data = await res.json();
+
     console.log(data);
 
-    if (data.status === 201) window.alert("valid");
+    // if (data.status === 210) navigate("/login");
 
     //history.pushState("/login");
   };

@@ -1,6 +1,28 @@
 import React from "react";
 
 const SignIn = () => {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  const postData = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch("http://localhost:3080/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    const data = await res.json();
+
+    console.log(data);
+  };
+
   return (
     <>
       <div className="d-flex con justify-content-center">
@@ -20,6 +42,8 @@ const SignIn = () => {
                 type="email"
                 className="form-control"
                 placeholder="name@example.com"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
               <label>Email address</label>
             </div>
@@ -28,6 +52,8 @@ const SignIn = () => {
                 type="password"
                 className="form-control"
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
               />
               <label>Password</label>
             </div>
@@ -50,7 +76,11 @@ const SignIn = () => {
             </div>
 
             <div className="d-grid">
-              <button type="submit" className="btn btn-primary">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={postData}
+              >
                 Submit
               </button>
             </div>

@@ -4,8 +4,8 @@ const { checkData } = require("../MiddleWare");
 
 const router = express.Router();
 
-router.post("/register", signUp);
+router.post("/register", checkData, signUp);
 
-router.post("/signin", signIn);
+router.post("/login", signIn);
 
 module.exports = router;
