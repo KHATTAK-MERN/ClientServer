@@ -1,0 +1,38 @@
+#root {
+  background: url(../public/background.jpg);
+}
+.bootstrapLogo {
+  width: 90px;
+  height: 90px;
+}
+
+.con {
+  height: 617px;
+}
+.wrapper {
+  width: 440px;
+  margin: auto auto;
+}
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+.p:hover {
+  text-decoration: solid;
+  color: blue;
+  cursor: pointer;
+}
+.asd {
+  background: whitesmoke;
+  padding: 25px;
+  padding-top: 10px;
+  border-radius: 15px;
+}
+
+.logo {
+  height: 60px;
+  background-color: transparent;
+  width: 60px;
+  margin-top: 2px;
+  padding-bottom: 2px;
+}
